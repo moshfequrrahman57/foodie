@@ -24,7 +24,7 @@ const Layout = (props) => {
              <div id="header" className="bg-light-chocolate w-full  
    flex items-center justify-between top-0 fixed z-10 ">
     <div className="flex items-center " >
-        <img src="../../public/resource/food-dinner-dish-plate-fork-svgrepo-com.svg" alt="food logo"
+        <img src="../resource/food-dinner-dish-plate-fork-svgrepo-com.svg" alt="food logo"
         width="40px" height="40px" className="m-2 p-1"/>
         <span className="font-bold text-2xl">Foodie</span>
     </div>
@@ -46,10 +46,10 @@ const Layout = (props) => {
             }
             {/* <a href="" className="mx-1 my-3 md:my-0 font-semibold md:text-sm rounded text-white hover:text-lime-400 hover:underline hover:underline-offset-4 ">Discover</a> */}
             </ul>
-           <img id="log_in_logo" src="../../public/resource/avatar-boy-svgrepo-com.svg" alt="avatar"
+           <img id="log_in_logo" src="../resource/avatar-boy-svgrepo-com.svg" alt="avatar"
            width="40px" height="40px" className="m-2 p-1 cursor-pointer   "/>
         <img onClick={drawer}
-         src="../../public/resource/menu-dots-svgrepo-com.svg" alt="menu"
+         src="../resource/menu-dots-svgrepo-com.svg" alt="menu"
         width="40px" height="40px"
          className="m-2 p-1  md:hidden hover:cursor-pointer hover:bg-amber-200 hover:rounded-full"/>
    </div>
