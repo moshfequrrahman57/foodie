@@ -17,7 +17,7 @@ const Menu_card = (props) => {
                     <div className='flex flex-row justify-between mx-1'>
                      <p className='font-semibold'>{item['prepTimeMinutes']+" mins."}</p>
                      <div className='flex flex-row'>
-                     <img src="../../public/resource/thumbs-up-svgrepo-com.svg" alt="liked" 
+                     <img src="../../src/resource/thumbs-up-svgrepo-com.svg" alt="liked" 
                      width={20} height={20} />
                      <span className='font-semibold'>{item['reviewCount']+" %"}</span>
                      </div>
