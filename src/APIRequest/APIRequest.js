@@ -1,9 +1,11 @@
 import axios from "axios";
 
 const BaseURL="https://dummyjson.com/recipes";
-let meal_type=[];
+
 export async function getMealCategory(){
     let res=await axios.get(BaseURL);
+    let meal_type=[];
+   // console.log(respond);
     if(res.status===200){
       //  console.dir(res.data['recipes']);
         for (const element of res.data['recipes']) {
@@ -21,6 +23,17 @@ export async function getMealCategory(){
     else{
         return []
     }
+}
+
+export async function getLatest() {
+  let res= await axios.get(BaseURL);
+  if(res.status===200){
+    //console.log(typeof res.data);
+    return res.data;
+  }
+  else{
+    return [];
+  }
 }
 
 

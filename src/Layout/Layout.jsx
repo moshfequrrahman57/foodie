@@ -12,7 +12,7 @@ const Layout = (props) => {
         useEffect( ()=>{
             ( async ()=>{
                 let res=await getMealCategory();
-                console.log(res);
+                //console.log(res);
                 setCategories(res);
             })()
         }
@@ -22,21 +22,21 @@ const Layout = (props) => {
     return (
         <div>
              <div id="header" className="bg-light-chocolate w-full  
-   flex items-center justify-between top-0 fixed z-10 ">
+   flex items-center justify-between top-0 fixed z-10 shadow-md ">
     <div className="flex items-center " >
         <img src="../resource/food-dinner-dish-plate-fork-svgrepo-com.svg" alt="food logo"
         width="40px" height="40px" className="m-2 p-1"/>
         <span className="font-bold text-2xl">Foodie</span>
     </div>
-    <div  className="flex items-center  md:w-3/4 md:justify-end  ">
+    <div  className="flex items-center w-full justify-end  md:w-3/4  ">
         <ul ref={menu_items}
-         className="absolute  md:relative top-14 md:top-0 pt-6 md:pt-0 pb-6 md:pb-0 -z-10 md:z-0 left-0   
-         grid md:flex grid-cols-3 md:flex-row w-full items-center justify-between bg-light-chocolate
-          -translate-y-[200%] md:translate-y-0 transition-transform duration-500">
+         className="absolute  md:relative top-14 left-0 md:top-0 pt-6 md:pt-0 pb-6 md:pb-0   -z-10 md:z-10
+       grid grid-cols-2 gap-4 md:gap-1 w-full md:flex  md:flex-row  bg-light-chocolate justify-between 
+          -translate-y-[200%] md:translate-y-0 transition-transform duration-500 ">
             {
                 categories.map((item,index)=>{
-                    return <li className='text-lg md:text-sm font-semibold
-                    rounded text-white hover:text-lime-500 hover:underline hover:underline-offset-4
+                    return <li className='text-lg md:text-sm font-semibold  flex items-center justify-center 
+                    rounded text-white hover:text-black hover:underline hover:underline-offset-4 mx-4 md:mx-0
                     '>
                         <NavLink key={index.toString()} to={"/byCategory/"+item}>
                         {item}
