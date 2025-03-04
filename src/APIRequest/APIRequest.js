@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const BaseURL="https://dummyjson.com/recipes";
-
+let unique_meal;
 export async function getMealCategory(){
     let res=await axios.get(BaseURL);
     let meal_type=[];
@@ -16,7 +16,7 @@ export async function getMealCategory(){
             }
         }
        // console.log(meal_type);
-        let unique_meal=meal_type.filter((item,index)=>meal_type.indexOf(item)===index);
+         unique_meal=meal_type.filter((item,index)=>meal_type.indexOf(item)===index);
         //console.log(unique_meal);
         return unique_meal;
     }
@@ -37,3 +37,25 @@ export async function getLatest() {
 }
 
 
+export async function getMenusByCategory(category){
+  let menusByCategory=[];
+  let menus=[];
+  let res= await axios.get(BaseURL);
+  if(res.status===200){
+     let resArray=res.data['recipes'];
+     for(const element of resArray){
+      for(const item of element['mealType']){
+        if(item===category){
+          menusByCategory=[...menusByCategory,item];
+          menus.push(element);
+        }
+      }
+     }
+     //console.log(menusByCategory);
+     return menus;
+    
+  }
+  else{
+    return [];
+  }
+}
